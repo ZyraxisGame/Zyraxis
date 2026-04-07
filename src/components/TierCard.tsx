@@ -51,7 +51,7 @@ export default function TierCard({ tier, unlocked, progress, faction, discountUs
           {unlocked && <span style={{ fontSize: 9, color: tier.accent, opacity: 0.5 }}>›</span>}
         </div>
         {!unlocked && tier.unlockRequires && (
-          <div style={{ marginTop: 5, fontSize: 7, color: '#1a2030', letterSpacing: 1 }}>
+          <div style={{ marginTop: 5, fontSize: 11, color: '#1e2d40', letterSpacing: 1 }}>
             REQ: {Object.entries(tier.unlockRequires).map(([k, v]) => `${v} ${k}`).join(' · ')}
           </div>
         )}
@@ -64,7 +64,7 @@ export default function TierCard({ tier, unlocked, progress, faction, discountUs
           style={{ padding: '5px 16px', background: '#0a0a1a', border: '1px solid #818cf830', borderTop: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, transition: 'all 0.2s' }}
         >
           <span style={{ fontSize: 7, color: '#818cf8', letterSpacing: 2 }}>♟ ACTIVATE INSIDE ACCESS</span>
-          <span style={{ fontSize: 7, color: '#374151', letterSpacing: 1 }}>— reduce unlock requirements 20%</span>
+          <span style={{ fontSize: 11, color: '#475569', letterSpacing: 1 }}>— reduce unlock requirements 20%</span>
         </div>
       )}
     </div>

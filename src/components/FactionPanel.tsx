@@ -12,22 +12,20 @@ export default function FactionPanel({ faction, alignment, hiddenChoicesActive }
   const alignLabel = alignPct >= 70 ? 'ALIGNED' : alignPct >= 40 ? 'DRIFTING' : 'BETRAYED'
 
   return (
-    <div style={{ padding: '14px 14px 10px', borderTop: '1px solid #0d1018', background: '#05070c' }}>
-      <div style={{ fontSize: 7, letterSpacing: 3, color: '#1f2937', marginBottom: 10 }}>[ FACTION ]</div>
+    <div style={{ padding: '14px 14px 12px', borderTop: '1px solid #1e2d40', background: '#05070c' }}>
+      <div style={{ fontSize: 10, letterSpacing: 3, color: '#334155', marginBottom: 10 }}>[ FACTION ]</div>
 
-      {/* Identity */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-        <span style={{ fontSize: 16, color: faction.accent }}>{faction.icon}</span>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+        <span style={{ fontSize: 18, color: faction.accent }}>{faction.icon}</span>
         <div>
-          <div style={{ fontSize: 8, color: faction.accent, letterSpacing: 2, textTransform: 'uppercase' }}>{faction.name}</div>
-          <div style={{ fontSize: 7, color: '#374151', letterSpacing: 1 }}>{faction.subtitle}</div>
+          <div style={{ fontSize: 12, color: faction.accent, letterSpacing: 2, textTransform: 'uppercase' }}>{faction.name}</div>
+          <div style={{ fontSize: 11, color: '#475569', letterSpacing: 1, marginTop: 2 }}>{faction.subtitle}</div>
         </div>
       </div>
 
-      {/* Alignment meter */}
-      <div style={{ marginBottom: 8 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 7, marginBottom: 3, letterSpacing: 1 }}>
-          <span style={{ color: '#374151' }}>ALIGNMENT</span>
+      <div style={{ marginBottom: 10 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, marginBottom: 4, letterSpacing: 1 }}>
+          <span style={{ color: '#475569' }}>ALIGNMENT</span>
           <span style={{ color: alignColor }}>{alignLabel}</span>
         </div>
         <div style={{ height: 3, background: '#111827', borderRadius: 2 }}>
@@ -35,13 +33,10 @@ export default function FactionPanel({ faction, alignment, hiddenChoicesActive }
         </div>
       </div>
 
-      {/* Unique mechanic status */}
-      <div style={{ fontSize: 7, color: '#1f2937', letterSpacing: 1, lineHeight: 1.8 }}>
-        <div style={{ color: faction.accent + '80' }}>{faction.uniqueMechanic}</div>
+      <div style={{ fontSize: 11, color: '#334155', letterSpacing: 1, lineHeight: 1.8 }}>
+        <div style={{ color: faction.accent + '99' }}>{faction.uniqueMechanic}</div>
         {hiddenChoicesActive && (
-          <div style={{ color: '#ef4444', marginTop: 3, letterSpacing: 1 }}>
-            ☣ HIDDEN CHOICES ACTIVE
-          </div>
+          <div style={{ color: '#ef4444', marginTop: 3, letterSpacing: 1 }}>☣ HIDDEN CHOICES ACTIVE</div>
         )}
         {alignPct === 0 && (
           <div style={{ color: '#ef4444', marginTop: 3 }}>⚠ ABILITY LOCKED</div>
