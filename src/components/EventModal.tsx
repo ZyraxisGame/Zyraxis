@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { RandomEvent, Resources, Ending } from '../types'
+import type { RandomEvent, Resources, Ending, EventChoice } from '../types'
 import { applyEffect } from '../hooks/useGameState'
 
 // ============================================================
@@ -8,7 +8,7 @@ import { applyEffect } from '../hooks/useGameState'
 interface EventProps {
   event: RandomEvent
   res: Resources
-  onChoice: (choice: { label: string; consequence: string; effect: Partial<Resources> }, after: Resources) => void
+  onChoice: (choice: EventChoice, after: Resources) => void
 }
 
 export function EventModal({ event, res, onChoice }: EventProps) {
